@@ -19,6 +19,7 @@ public class BallMove : MonoBehaviour
     void Update()
     {
         CheckInput();
+        CheckBallOutOfBounds();
     }
 
     private void FixedUpdate()
@@ -36,6 +37,18 @@ public class BallMove : MonoBehaviour
         }
     }
 
+    private void CheckBallOutOfBounds()
+    {
+        if (GameplayController.instance.gamePlaying)
+        {
+            if(transform.position.y < -4f)
+            {
+                GameplayController.instance.gamePlaying = false;
+                Destroy(gameObject);
+            }
+        }
+    }
+
     void CheckInput()
     {
         if (Input.GetMouseButtonDown(0))
@@ -43,6 +56,7 @@ public class BallMove : MonoBehaviour
             if (!GameplayController.instance.gamePlaying)
             {
                 GameplayController.instance.gamePlaying = true;
+                GameplayController.instance.ActivateTileSpawner();
             }
         }
 
