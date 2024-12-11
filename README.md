@@ -1,6 +1,5 @@
 # ZigZag-Game
-Игра, которая была сделана в рамках видеокурса. Нужно изменять направление движения шарика для прохождения препятствий.
+A game created as part of a video course. The goal is to change the direction of the ball to navigate through obstacles.
 
-Изменить направление шарика - ЛКМ.
-
-Перезапустить уровень - R.
+Change ball direction - Left Mouse Button (LMB).
+Restart level - R.
